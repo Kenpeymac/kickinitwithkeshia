@@ -644,7 +644,7 @@
         </div>
 
         <div class="ps-timer">
-          <p class="ps-timer-label">Enrollment closes in</p>
+          <p class="ps-timer-label">Enrollment closes · cohort begins August 5</p>
           <div class="countdown" id="countdown" aria-label="Enrollment closes in">
             <div class="count-box"><div class="n" id="cd-d">00</div><div class="l">Days</div></div>
             <div class="count-box"><div class="n" id="cd-h">00</div><div class="l">Hours</div></div>
@@ -655,8 +655,8 @@
 
         <div class="ps-copy">
           <p class="eyebrow" style="color:oklch(86% 0.07 350)">Limited enrollment</p>
-          <p class="ps-line">Seats are limited and go fast. When this cohort fills, the next one isn't until next quarter.</p>
-          <p class="seats"><b id="seats">12</b> seats remaining in this cohort</p>
+          <p class="ps-line">Keshia is taking only <b>12</b> women this cohort — once they're full, the next one isn't until next quarter.</p>
+          <p class="seats">Just <b id="seats">12</b> seats. That's the whole room.</p>
         </div>
       </div>
     </div>
@@ -924,12 +924,10 @@
     }
   });
 
-  // Countdown — next quarter close, persisted target
+  // Countdown — real enrollment close: the cohort begins Aug 5.
+  // To reuse for the next cohort, just change this one date.
   (function(){
-    const KEY='gwr_deadline';
-    let target=Number(localStorage.getItem(KEY));
-    const now=Date.now();
-    if(!target||target<now){ target=now+ (9*86400000) + (4*3600000); localStorage.setItem(KEY,target); }
+    const target=new Date('2026-08-05T00:00:00').getTime();
     const d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
           m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
     function pad(n){return String(n).padStart(2,'0')}
@@ -940,8 +938,9 @@
       const mm=Math.floor(diff/60000);diff-=mm*60000;
       const ss=Math.floor(diff/1000);
       d.textContent=pad(dd);h.textContent=pad(hh);m.textContent=pad(mm);s.textContent=pad(ss);
+      if(diff<=0) clearInterval(timer);
     }
-    tick();setInterval(tick,1000);
+    tick();const timer=setInterval(tick,1000);
   })();
 
   // Before/After reveal — "The shift" slider
