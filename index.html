@@ -162,6 +162,16 @@
   .hero-quote p{font-size:.96rem;line-height:1.5;color:var(--fg)}
   .hero-quote .who{margin-top:.7rem;font-weight:600;font-size:.84rem;color:var(--accent)}
 
+  /* ---------- Floating petals (decorative parallax) ---------- */
+  .petals{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .petal{
+    position:absolute;will-change:transform;pointer-events:none;
+    background:radial-gradient(72% 72% at 34% 28%, oklch(84% 0.10 26 / .8), oklch(70% 0.15 14 / .35) 82%);
+    border-radius:0 100% 0 100% / 0 100% 0 100%;
+    filter:blur(.6px);
+  }
+  @media(prefers-reduced-motion:reduce){.petal{display:none}}
+
   /* ---------- Section scaffolding ---------- */
   section{padding-block:clamp(56px,8vw,104px)}
   .section-head{text-align:center;max-width:640px;margin:0 auto clamp(34px,5vw,56px)}
@@ -529,6 +539,12 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
+  <div class="petals" aria-hidden="true">
+    <span class="petal" style="top:6%;left:2%;width:74px;height:96px;opacity:.34" data-speed="0.14" data-rot="-20"></span>
+    <span class="petal" style="top:57%;left:5%;width:48px;height:62px;opacity:.46" data-speed="0.26" data-rot="26"></span>
+    <span class="petal" style="top:24%;left:46%;width:30px;height:40px;opacity:.28" data-speed="0.10" data-rot="14"></span>
+    <span class="petal" style="bottom:11%;left:28%;width:58px;height:76px;opacity:.26" data-speed="0.19" data-rot="-8"></span>
+  </div>
   <div class="hero-photo">
     <img src="assets/keshia.jpg" alt="Keshia">
     <figure class="hero-quote">
@@ -868,6 +884,11 @@
 
 <!-- ===== FINAL CTA ===== -->
 <section class="final">
+  <div class="petals" aria-hidden="true">
+    <span class="petal" style="top:8%;left:6%;width:62px;height:80px;opacity:.3" data-speed="0.16" data-rot="-16"></span>
+    <span class="petal" style="top:18%;left:84%;width:44px;height:58px;opacity:.4" data-speed="0.26" data-rot="22"></span>
+    <span class="petal" style="bottom:12%;left:60%;width:54px;height:70px;opacity:.24" data-speed="0.12" data-rot="8"></span>
+  </div>
   <div class="wrap">
     <h2>This is your season. <span class="script">Don't let it pass.</span></h2>
     <div class="actions">
@@ -955,7 +976,7 @@
     const handle=document.getElementById('revealHandle');
     if(!reveal||!handle) return;
     const MIN=6, MAX=94, REST=10;
-    let pos=REST, dragging=false, autoPlayed=false;
+    let pos=REST, dragging=false, userControlled=false;
 
     function set(p,touch){
       pos=Math.min(MAX,Math.max(MIN,p));
@@ -971,7 +992,7 @@
 
     // --- drag (mouse + touch) ---
     function start(e){
-      dragging=true;
+      dragging=true; userControlled=true;                   // user takes over from scroll-drive
       reveal.classList.add('touched','dragging');           // kill transition for 1:1 drag
       try{ handle.setPointerCapture(e.pointerId); }catch(_){}
       fromClientX(e.clientX); e.preventDefault();
@@ -988,35 +1009,71 @@
     // tap anywhere on the panel to jump the shift there
     reveal.addEventListener('pointerdown',e=>{
       if(e.target.closest('.reveal-handle')) return;
+      userControlled=true;
       reveal.classList.add('touched');
       fromClientX(e.clientX);
     });
 
     // --- keyboard ---
     handle.addEventListener('keydown',e=>{
+      const keys=['ArrowLeft','ArrowDown','ArrowRight','ArrowUp','Home','End'];
+      if(!keys.includes(e.key)) return;
+      userControlled=true;
       const step=e.shiftKey?12:5;
-      if(e.key==='ArrowLeft'||e.key==='ArrowDown'){ set(pos-step,true); e.preventDefault(); }
-      else if(e.key==='ArrowRight'||e.key==='ArrowUp'){ set(pos+step,true); e.preventDefault(); }
-      else if(e.key==='Home'){ set(MIN,true); e.preventDefault(); }
-      else if(e.key==='End'){ set(MAX,true); e.preventDefault(); }
+      if(e.key==='ArrowLeft'||e.key==='ArrowDown'){ set(pos-step,true); }
+      else if(e.key==='ArrowRight'||e.key==='ArrowUp'){ set(pos+step,true); }
+      else if(e.key==='Home'){ set(MIN,true); }
+      else if(e.key==='End'){ set(MAX,true); }
+      e.preventDefault();
     });
 
-    // --- one-time auto-sweep when it scrolls into view (demonstrates the interaction) ---
-    function autoPlay(){
-      if(autoPlayed) return; autoPlayed=true;
-      const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-      if(reduce){ set(50,false); return; }                  // just show both halves, no motion
-      set(88,false);                                        // sweep open → reveal the gains
-      setTimeout(()=>set(REST,false),1500);                 // settle back, leaving the cue
+    // --- scroll-driven reveal: the shift sweeps open as you scroll the panel up
+    //     the page (and back as you scroll up), so no one has to drag to see it.
+    //     The moment a user drags / taps / keys, they take over for good. ---
+    const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    let ticking=false;
+    function onScroll(){
+      if(userControlled||reduce||dragging) return;
+      if(ticking) return; ticking=true;
+      requestAnimationFrame(()=>{
+        ticking=false;
+        const r=reveal.getBoundingClientRect();
+        const vh=window.innerHeight||document.documentElement.clientHeight;
+        const startAt=vh*0.82, endAt=vh*0.30;               // sweep between these positions
+        let p=(startAt-r.top)/(startAt-endAt);
+        p=Math.max(0,Math.min(1,p));
+        set(MIN + p*(MAX-MIN), false);                       // before → after as it rises
+      });
     }
-    if('IntersectionObserver' in window){
-      const io=new IntersectionObserver((ents)=>{
-        ents.forEach(en=>{ if(en.isIntersecting){ autoPlay(); io.disconnect(); } });
-      },{threshold:.45});
-      io.observe(reveal);
-    }else{ autoPlay(); }
+    if(reduce){ set(50,false); }                             // show both halves, no motion
+    else{
+      window.addEventListener('scroll',onScroll,{passive:true});
+      window.addEventListener('resize',onScroll,{passive:true});
+      set(REST,false);
+      onScroll();
+    }
+  })();
 
-    set(REST,false);
+  // Floating-petal parallax — drift petals at varied speeds as their section scrolls.
+  (function(){
+    const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const petals=[...document.querySelectorAll('.petal')];
+    if(reduce||!petals.length) return;
+    let ticking=false;
+    function frame(){
+      ticking=false;
+      for(const p of petals){
+        const sect=p.closest('section');
+        if(!sect) continue;
+        const s=parseFloat(p.dataset.speed||'0.15');
+        const rot=p.dataset.rot||'0';
+        p.style.transform='translate3d(0,'+(sect.getBoundingClientRect().top*s).toFixed(1)+'px,0) rotate('+rot+'deg)';
+      }
+    }
+    function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } }
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',onScroll,{passive:true});
+    frame();
   })();
 </script>
 </body>
