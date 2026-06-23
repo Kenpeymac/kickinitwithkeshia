@@ -8,3 +8,6 @@
 *.log
 Thumbs.db
 node_modules/
+
+# AI image generation scratch outputs
+nanobanana-output/
