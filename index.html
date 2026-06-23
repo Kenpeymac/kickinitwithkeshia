@@ -283,8 +283,6 @@
   }
   .program-wm .wm1{top:-7%;right:-3%;font-size:clamp(9rem,22vw,19rem);opacity:.055}
   .program-wm .wm2{bottom:-11%;left:-3%;font-size:clamp(7rem,16vw,14rem);opacity:.04}
-  .program-wm .wm3{font-family:var(--font-script);text-transform:none;font-weight:400;
-    top:34%;right:6%;font-size:clamp(7rem,15vw,13rem);opacity:.07;line-height:.8}
   .program-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,4vw,56px);align-items:start}
   .program .eyebrow{color:oklch(86% 0.07 350)}
   .program h2{font-size:clamp(2rem,1.3rem + 2.6vw,3.3rem);color:#fff}
@@ -381,6 +379,12 @@
   .seats b{color:#fff;font-weight:700}
 
   /* ---------- Ebook ---------- */
+  .ebook{position:relative;overflow:hidden}
+  .ebook .wrap{position:relative;z-index:1}
+  /* faint blush script watermark in the open space */
+  .ebook-wm{position:absolute;left:-2%;bottom:-9%;font-family:var(--font-script);
+    font-size:clamp(8rem,20vw,16rem);line-height:.8;color:var(--accent);opacity:.05;
+    white-space:nowrap;pointer-events:none;user-select:none;z-index:0}
   .ebook-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,60px);align-items:center}
   .ebook-cover{
     max-width:380px;width:100%;justify-self:center;
@@ -439,8 +443,12 @@
   .final .actions{margin-top:2.2rem;display:flex;gap:1.4rem;align-items:center;justify-content:center;flex-wrap:wrap}
 
   /* ---------- Footer ---------- */
-  footer{background:oklch(24% 0.04 350);color:oklch(85% 0.02 350);padding-block:2.6rem}
-  .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+  footer{background:oklch(24% 0.04 350);color:oklch(85% 0.02 350);padding-block:2.6rem;position:relative;overflow:hidden}
+  /* faint dark-on-dark sign-off watermark */
+  .foot-wm{position:absolute;right:2.5%;top:50%;transform:translateY(-50%);
+    font-family:var(--font-script);font-size:clamp(4.5rem,12vw,8.5rem);line-height:.8;
+    color:#fff;opacity:.05;white-space:nowrap;pointer-events:none;user-select:none;z-index:0}
+  .foot-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
   .foot-brand{
     display:block;width:auto;height:34px;aspect-ratio:733.5/192.75;
     background-color:oklch(94% 0.02 350);
@@ -654,7 +662,6 @@
   <div class="program-wm" aria-hidden="true">
     <span class="wm1">Grown</span>
     <span class="wm2">Woman</span>
-    <span class="wm3">reset</span>
   </div>
   <div class="wrap">
     <div class="program-grid">
@@ -823,6 +830,7 @@
 <!-- ===== SCARCITY ===== -->
 <!-- ===== EBOOK ===== -->
 <section class="ebook" id="ebook">
+  <span class="ebook-wm" aria-hidden="true">reset</span>
   <div class="wrap ebook-grid">
     <div class="ebook-cover">
       <img src="assets/ebook-cover.png" alt="The Grown Woman Reset ebook cover" loading="lazy">
@@ -918,6 +926,7 @@
 
 <!-- ===== FOOTER ===== -->
 <footer id="contact">
+  <span class="foot-wm" aria-hidden="true">Keshia</span>
   <div class="wrap foot-inner">
     <span class="foot-brand" role="img" aria-label="Kick'N It w/ Keshia"></span>
     <nav class="foot-links">
