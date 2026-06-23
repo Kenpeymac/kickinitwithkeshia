@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Vercel
+.vercel
+
+# Editor / OS noise
+*.log
+Thumbs.db
+node_modules/

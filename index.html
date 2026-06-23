@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Grown Woman Reset — Kick'N It w/ Keshia</title>
+<meta name="description" content="A guided 5-week reset for women 40+ ready to put themselves back on the list. Live Zoom coaching with Keshia, replays, and tools to your inbox. Open only once a quarter.">
+<meta name="theme-color" content="#fdf0f3">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/ebook-cover.png">
+<!-- Open Graph / social link previews -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Grown Woman Reset — Kick'N It w/ Keshia">
+<meta property="og:description" content="A guided 5-week reset for women 40+ ready to choose themselves. Live Zoom coaching with Keshia — open only once a quarter.">
+<meta property="og:image" content="assets/keshia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Grown Woman Reset — Kick'N It w/ Keshia">
+<meta name="twitter:description" content="A guided 5-week reset for women 40+ ready to choose themselves. Live Zoom coaching with Keshia.">
+<meta name="twitter:image" content="assets/keshia.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  /* Brand script face. Drop ISOM-Script.woff2 (or .otf) into the project root
+     and this picks it up automatically; until then it falls back to Pinyon Script. */
+  @font-face{
+    font-family:'ISOM Script';
+    src:url('assets/fonts/ISOM-Script.woff2') format('woff2'),
+        url('assets/fonts/ISOM-Script.otf') format('opentype');
+    font-weight:400;font-style:normal;font-display:swap;
+  }
+  :root{
+    --bg:      oklch(96% 0.012 350);
+    --bg-2:    oklch(97.5% 0.008 350);
+    --surface: oklch(100% 0 0);
+    --fg:      oklch(26% 0.05 350);
+    --muted:   oklch(48% 0.03 350);
+    --border:  oklch(89% 0.015 350);
+    --accent:  oklch(50% 0.17 0);
+    --accent-soft: oklch(94% 0.04 358);
+    --cta:     oklch(58% 0.20 8);
+    --cta-hover: oklch(52% 0.20 8);
+    --banner:  oklch(34% 0.14 358);
+    --banner-2: oklch(26% 0.12 358);
+    --gold:    oklch(72% 0.09 75);
+
+    --font-display:'Playfair Display','Iowan Old Style',Georgia,serif;
+    --font-script:'ISOM Script','Pinyon Script','Snell Roundhand',cursive;
+    --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+
+    --maxw:1180px;
+    --radius:18px;
+    --shadow:0 24px 60px -28px oklch(40% 0.08 350 / .28);
+    --shadow-sm:0 10px 30px -18px oklch(40% 0.08 350 / .25);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--fg);
+    font-family:var(--font-body);
+    font-size:clamp(15px,1vw + 12px,17px);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.05;margin:0;text-wrap:balance}
+  p{margin:0;text-wrap:pretty}
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,5vw,40px)}
+  .script{font-family:var(--font-script);color:var(--accent);font-weight:400}
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin:0 0 .9rem;
+  }
+  .accent-text{color:var(--accent)}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;justify-content:center;
+    background:var(--cta);color:#fff;font-weight:600;font-size:.95rem;
+    padding:.92rem 1.7rem;border-radius:999px;border:none;cursor:pointer;
+    letter-spacing:.02em;transition:transform .18s ease,background .18s ease,box-shadow .18s ease;
+    box-shadow:0 10px 24px -12px oklch(58% 0.20 8 / .6);
+  }
+  .btn:hover{background:var(--cta-hover);transform:translateY(-2px)}
+  .btn.ghost{
+    background:transparent;color:var(--accent);box-shadow:none;
+    border:1.5px solid color-mix(in oklch,var(--accent) 40%,transparent);
+  }
+  .btn.ghost:hover{background:var(--accent-soft)}
+  .btn.block{width:100%}
+  .text-link{color:var(--accent);font-weight:600;border-bottom:1.5px solid color-mix(in oklch,var(--accent) 35%,transparent);padding-bottom:1px}
+  .text-link:hover{border-color:var(--accent)}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:color-mix(in oklch,var(--bg) 80%,transparent);
+    backdrop-filter:blur(14px) saturate(1.2);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center}
+  /* Kick'N It w/ Keshia wordmark — single-color SVG recolored via mask */
+  .brand-logo{
+    display:block;width:auto;height:38px;aspect-ratio:733.5/192.75;
+    background-color:var(--accent);
+    -webkit-mask:url('assets/logo-kiwk.svg') no-repeat left center/contain;
+    mask:url('assets/logo-kiwk.svg') no-repeat left center/contain;
+  }
+  .nav-links{display:flex;gap:1.9rem;align-items:center}
+  .nav-links a{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;transition:color .15s}
+  .nav-links a:hover{color:var(--accent)}
+  .nav .btn{padding:.6rem 1.25rem;font-size:.82rem;color:#fff}
+  .nav .btn:hover{background:#fff;color:var(--accent)}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--fg)}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:min(88vh,820px);display:flex;align-items:center;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(55% 45% at 6% 18%, oklch(94% 0.04 350 / .7), transparent 70%),
+      radial-gradient(50% 40% at 4% 92%, oklch(95% 0.03 350 / .5), transparent 70%);
+  }
+  .hero-inner{position:relative;z-index:3;width:100%}
+  .hero-copy{max-width:min(52%,580px)}
+  .hero-copy h1{font-size:clamp(2.6rem,1.4rem + 4vw,4.6rem);letter-spacing:-.01em}
+  .hero-copy h1 .you{font-style:italic;color:var(--accent)}
+  .hero-lead{font-size:clamp(1.05rem,.95rem + .5vw,1.3rem);color:var(--muted);margin-top:1.4rem;max-width:34ch}
+  .hero-actions{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-top:2.1rem}
+  .trust{display:flex;align-items:center;gap:.8rem;margin-top:2.3rem;color:var(--muted);font-size:.85rem}
+  .avatars{display:flex}
+  .avatars span{
+    width:34px;height:34px;border-radius:50%;border:2.5px solid var(--bg);
+    margin-left:-10px;background-size:cover;background-position:center;
+    box-shadow:var(--shadow-sm);
+  }
+  .avatars span:first-child{margin-left:0}
+  .a1{background:linear-gradient(135deg,oklch(70% 0.09 30),oklch(55% 0.12 20))}
+  .a2{background:linear-gradient(135deg,oklch(72% 0.07 60),oklch(58% 0.1 40))}
+  .a3{background:linear-gradient(135deg,oklch(68% 0.08 350),oklch(52% 0.12 358))}
+  .a4{background:linear-gradient(135deg,oklch(74% 0.06 80),oklch(60% 0.09 50))}
+
+  /* Hero visual — full-bleed photo on the right */
+  .hero-photo{position:absolute;inset:0 0 0 auto;width:54%;z-index:1}
+  .hero-photo>img{width:100%;height:100%;object-fit:cover;object-position:50% 14%}
+  .hero-photo::before{
+    content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(90deg, var(--bg) 1%, oklch(96% 0.012 350 / .55) 20%, transparent 44%);
+  }
+  .hero-quote{
+    position:absolute;bottom:clamp(24px,6vh,64px);right:clamp(16px,3vw,48px);z-index:3;max-width:300px;
+    background:oklch(91% 0.05 358 / .8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+    border-radius:18px;padding:1.35rem 1.45rem;
+    box-shadow:0 18px 48px oklch(40% 0.08 350 / .22);border:1px solid oklch(100% 0 0 / .45);
+  }
+  .hero-quote .mark{font-family:var(--font-display);color:var(--accent);font-size:2.4rem;line-height:.6;display:block;margin-bottom:.3rem}
+  .hero-quote p{font-size:.96rem;line-height:1.5;color:var(--fg)}
+  .hero-quote .who{margin-top:.7rem;font-weight:600;font-size:.84rem;color:var(--accent)}
+
+  /* ---------- Section scaffolding ---------- */
+  section{padding-block:clamp(56px,8vw,104px)}
+  .section-head{text-align:center;max-width:640px;margin:0 auto clamp(34px,5vw,56px)}
+  .section-head h2{font-size:clamp(1.9rem,1.3rem + 2.2vw,3rem)}
+  .section-head p{color:var(--muted);margin-top:1rem;font-size:1.08rem}
+  .rule{width:54px;height:2px;background:var(--gold);margin:1.1rem auto 0;border-radius:2px}
+
+  /* ---------- Outcomes ---------- */
+  .outcomes{background:var(--bg-2);border-block:1px solid var(--border)}
+  .outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2.5vw,34px);align-items:start}
+  .is-this-you ul{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:.85rem}
+  .is-this-you li{position:relative;padding-left:1.7rem;color:var(--muted)}
+  .is-this-you li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:color-mix(in oklch,var(--accent) 45%,transparent)}
+  .shift{
+    background:var(--accent);color:#fff;border-radius:var(--radius);padding:1.8rem 1.6rem;
+    box-shadow:var(--shadow);align-self:stretch;display:flex;flex-direction:column;justify-content:center;
+  }
+  .shift .eyebrow{color:oklch(92% 0.04 350)}
+  .shift p{font-family:var(--font-display);font-size:1.5rem;line-height:1.2}
+  .walk h3{font-size:1rem;margin-bottom:1.2rem}
+  .walk-list{display:grid;gap:1.15rem}
+  .walk-item{display:flex;gap:.85rem;align-items:flex-start}
+  .walk-item .ic{flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;color:var(--accent)}
+  .walk-item .ic svg{width:17px;height:17px}
+  .walk-item b{font-family:var(--font-display);font-weight:600;font-size:1.02rem;display:block;margin-bottom:.15rem}
+  .walk-item span{color:var(--muted);font-size:.9rem;line-height:1.45}
+
+  /* ---------- Before / After reveal ---------- */
+  .shift-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(30px,4.5vw,64px);align-items:center}
+  .shift-copy{grid-column:2;grid-row:1;max-width:42ch}
+  .shift-copy h2{font-size:clamp(2rem,1.3rem + 2.4vw,3.1rem);line-height:1.08;margin-top:.5rem}
+  .shift-copy .script{color:var(--accent)}
+  .shift-sub{color:var(--muted);margin-top:1.1rem;font-size:1.05rem;line-height:1.55}
+  .shift-sub em{font-style:italic;color:var(--accent);font-weight:600}
+  .shift-hint{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.4rem;color:var(--accent);font-weight:600;font-size:.95rem}
+  .shift-hint svg{width:20px;height:20px;animation:shiftHint 2.4s ease-in-out 1s infinite}
+  @media(prefers-reduced-motion:reduce){.shift-hint svg{animation:none}}
+
+  .reveal{
+    grid-column:1;grid-row:1;
+    position:relative;border-radius:calc(var(--radius) + 4px);overflow:hidden;
+    box-shadow:var(--shadow);border:1px solid var(--border);
+    --pos:9%;user-select:none;touch-action:pan-y;isolation:isolate;
+  }
+  .reveal-layer{inset:0;display:flex;align-items:flex-start}
+  .reveal-after{position:relative}              /* defines height */
+  .reveal-before{position:absolute;clip-path:inset(0 0 0 var(--pos));transition:clip-path .9s cubic-bezier(.65,0,.35,1)}
+  .reveal-handle{transition:left .9s cubic-bezier(.65,0,.35,1)}
+  .reveal.dragging .reveal-before,.reveal.dragging .reveal-handle{transition:none}
+  @media(prefers-reduced-motion:reduce){.reveal-before,.reveal-handle{transition:none}}
+  .reveal-inner{
+    width:100%;max-width:none;padding:clamp(30px,4.5vw,56px) clamp(26px,5vw,68px);
+  }
+  .reveal-after{background:linear-gradient(135deg, oklch(99% 0.012 350), color-mix(in oklch,var(--accent) 9%,#fff))}
+  .reveal-before{background:var(--bg-2)}
+  .reveal-tag{
+    font-family:var(--font-mono,ui-monospace,monospace);text-transform:uppercase;letter-spacing:.14em;
+    font-size:.72rem;font-weight:600;margin-bottom:1.4rem;display:inline-flex;align-items:center;gap:.5rem;
+  }
+  .reveal-tag::before{content:"";width:22px;height:2px;border-radius:2px;background:currentColor;opacity:.5}
+  .reveal-tag--before{color:var(--muted)}
+  .reveal-tag--after{color:var(--accent)}
+  .before-list{list-style:none;margin:0;padding:0;display:grid;gap:1rem;max-width:30ch}
+  .before-list li{position:relative;padding-left:1.7rem;color:var(--muted);font-size:1.06rem;line-height:1.4}
+  .before-list li::before{content:"";position:absolute;left:0;top:.5em;width:9px;height:9px;border-radius:50%;background:color-mix(in oklch,var(--accent) 40%,transparent)}
+  .reveal-after .walk-list{max-width:560px}
+  .reveal-after .walk-item b{font-size:1.06rem}
+
+  .reveal-handle{
+    position:absolute;top:0;bottom:0;left:var(--pos);width:0;transform:translateX(-50%);
+    background:none;border:0;padding:0;cursor:ew-resize;z-index:3;touch-action:none;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .reveal-line{position:absolute;top:0;bottom:0;width:3px;background:var(--accent);box-shadow:0 0 0 1px color-mix(in oklch,var(--accent) 30%,#fff)}
+  .reveal-knob{
+    position:relative;display:flex;flex-direction:column;align-items:center;gap:.3rem;
+    background:var(--accent);color:#fff;border-radius:999px;padding:.85rem .7rem;min-width:58px;
+    box-shadow:0 10px 26px -8px color-mix(in oklch,var(--accent) 70%,transparent), 0 0 0 5px color-mix(in oklch,var(--accent) 16%,transparent);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .reveal-knob-label{font-family:var(--font-display);font-style:italic;font-size:.86rem;line-height:1;white-space:nowrap}
+  .reveal-knob svg{width:22px;height:22px}
+  .reveal-handle:hover .reveal-knob,.reveal-handle:focus-visible .reveal-knob{transform:scale(1.06)}
+  .reveal-handle:focus-visible{outline:none}
+  .reveal-handle:focus-visible .reveal-knob{box-shadow:0 10px 26px -8px color-mix(in oklch,var(--accent) 70%,transparent), 0 0 0 5px color-mix(in oklch,var(--accent) 34%,transparent)}
+  .reveal:not(.touched) .reveal-knob{animation:shiftHint 2.4s ease-in-out 1s infinite}
+  @keyframes shiftHint{0%,100%{transform:translateX(0)}45%{transform:translateX(9px)}}
+  @media(prefers-reduced-motion:reduce){.reveal-knob{animation:none!important}}
+
+  /* ---------- Program banner ---------- */
+  .program{
+    color:#fff;position:relative;overflow:hidden;
+    background:
+      radial-gradient(70% 120% at 8% 20%, oklch(42% 0.16 358 / .9), transparent 60%),
+      radial-gradient(60% 120% at 95% 90%, oklch(40% 0.15 10 / .8), transparent 55%),
+      linear-gradient(120deg,var(--banner),var(--banner-2));
+  }
+  .program .wrap{position:relative;z-index:1}
+  .program-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,4vw,56px);align-items:start}
+  .program .eyebrow{color:oklch(86% 0.07 350)}
+  .program h2{font-size:clamp(2rem,1.3rem + 2.6vw,3.3rem);color:#fff}
+  .program h2 .script{color:oklch(86% 0.1 350)}
+  /* Grown Woman Reset logo — single-color SVG recolored to cream via mask */
+  .program-logo{
+    display:block;width:min(100%,460px);height:auto;aspect-ratio:750.75/384;
+    margin:.4rem 0 1.4rem;
+    background-color:oklch(95% 0.025 350);
+    -webkit-mask:url('assets/logo-grown-woman-reset.svg') no-repeat left center/contain;
+    mask:url('assets/logo-grown-woman-reset.svg') no-repeat left center/contain;
+  }
+  .program-sub{font-family:var(--font-display);font-size:clamp(1.35rem,1rem + 1.4vw,1.9rem);color:#fff;line-height:1.15;margin:0}
+  .program-sub .script{color:oklch(86% 0.1 350)}
+  .program .lead{color:oklch(90% 0.02 350);margin-top:1.2rem;font-size:1.08rem;max-width:46ch}
+  .program .open{font-family:var(--font-display);font-style:italic;color:oklch(86% 0.1 350);margin-top:1.1rem}
+  .program-benefits{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:.9rem}
+  .program-benefits li{position:relative;padding-left:1.6rem;font-size:.95rem;color:oklch(92% 0.02 350)}
+  .program-benefits li::before{content:"";position:absolute;left:0;top:.5em;width:9px;height:9px;border-radius:50%;background:oklch(80% 0.13 350)}
+  .program .btn{margin-top:2rem;background:#fff;color:var(--accent)}
+  .program .btn:hover{background:oklch(95% 0.03 350)}
+  .ps-copy{margin-top:2.2rem}
+  .ps-copy .eyebrow{margin-bottom:.2rem}
+  .ps-copy .ps-line{color:oklch(90% 0.02 350);margin-top:.7rem;font-size:1rem;max-width:42ch;line-height:1.5}
+  .ps-copy .seats{margin-top:.9rem;color:oklch(92% 0.04 350)}
+  .ps-timer{margin-top:1.4rem}
+  .ps-timer-label{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:oklch(86% 0.06 350);margin-bottom:.8rem;text-align:center}
+  .laptop{
+    background:oklch(22% 0.04 350);border-radius:16px;padding:14px 14px 0;box-shadow:var(--shadow);
+    border:1px solid oklch(45% 0.06 350);
+  }
+  .laptop-screen{border-radius:8px;overflow:hidden;aspect-ratio:16/10;background:#000;position:relative}
+  .laptop-screen img{width:100%;height:100%;object-fit:cover}
+  .laptop-screen .live{position:absolute;top:10px;left:10px;background:var(--cta);color:#fff;font-size:.66rem;font-weight:700;letter-spacing:.1em;padding:.25rem .55rem;border-radius:5px}
+  .laptop .bar{height:14px;background:oklch(30% 0.05 350);margin:10px -14px 0;border-radius:0 0 16px 16px}
+
+  /* ---------- Pricing ---------- */
+  .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
+  .tier{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:1.8rem 1.5rem;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);position:relative;
+  }
+  .tier.featured{border:2px solid var(--accent);box-shadow:var(--shadow);transform:translateY(-10px)}
+  .tier .badge{
+    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--cta);color:#fff;font-size:.66rem;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;padding:.4rem .85rem;border-radius:999px;white-space:nowrap;
+    box-shadow:0 8px 18px -8px oklch(58% 0.20 8 / .7);
+  }
+  .tier .tname{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .tier .price{font-family:var(--font-display);font-size:2.7rem;font-weight:700;margin:.5rem 0 .1rem;line-height:1}
+  .tier.featured .price{color:var(--accent)}
+  .tier .tagline{font-family:var(--font-display);font-style:italic;color:var(--fg);font-size:1.05rem;margin-bottom:1rem}
+  .tier .sub{color:var(--muted);font-size:.86rem;margin-bottom:1.1rem}
+  .tier ul{list-style:none;margin:0 0 1.4rem;padding:0;display:grid;gap:.6rem;font-size:.86rem}
+  .tier li{position:relative;padding-left:1.4rem;color:var(--muted)}
+  .tier li::before{content:"";position:absolute;left:0;top:.45em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .tier .btn{margin-top:auto}
+  .tier:not(.featured) .btn{background:transparent;color:var(--accent);border:1.5px solid color-mix(in oklch,var(--accent) 40%,transparent);box-shadow:none}
+  .tier:not(.featured) .btn:hover{background:var(--accent-soft)}
+  .pricing-note{text-align:center;margin-top:2rem;color:var(--muted)}
+  .pricing-note strong{color:var(--accent)}
+  .secure{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1rem;font-size:.82rem;color:var(--muted);flex-wrap:wrap;text-align:center}
+
+  /* ---------- Keshia ---------- */
+  .keshia{background:var(--bg-2);border-block:1px solid var(--border)}
+  .keshia-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,4vw,64px);align-items:center}
+  .keshia-photo{border-radius:24px 24px 120px 24px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);border:1px solid var(--border)}
+  .keshia-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+  .keshia-copy h2{font-size:clamp(2rem,1.4rem + 2vw,2.9rem)}
+  .keshia-copy p{color:var(--muted);margin-top:1.1rem}
+  .keshia-copy .pull{font-family:var(--font-display);font-style:italic;font-size:1.45rem;color:var(--accent);margin-top:1.4rem;line-height:1.25}
+  .keshia-meta{font-size:.84rem;color:var(--muted);font-style:italic;margin-top:1.2rem}
+  .keshia-actions{margin-top:1.8rem;display:flex;gap:1.3rem;align-items:center;flex-wrap:wrap}
+
+  /* ---------- Testimonials ---------- */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .quote-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.7rem;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+  .quote-card .mark{font-family:var(--font-display);color:var(--accent);font-size:2.6rem;line-height:.5;height:.7em}
+  .quote-card p{font-size:1rem;line-height:1.55;flex:1}
+  .quote-card .who{display:flex;align-items:center;gap:.75rem;margin-top:1.3rem;padding-top:1.1rem;border-top:1px solid var(--border)}
+  .quote-card .who .av{width:42px;height:42px;border-radius:50%;flex:0 0 auto;
+    background-color:var(--accent);
+    border:1.5px solid color-mix(in oklch,#fff 80%,transparent);
+    box-shadow:0 0 0 3px color-mix(in oklch,var(--accent) 14%,transparent);
+    background-repeat:no-repeat;background-position:center;background-size:24px 24px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8.5' r='3.8'/%3E%3Cpath d='M5 20c0-3.9 3.1-6.6 7-6.6s7 2.7 7 6.6'/%3E%3C/svg%3E")}
+  .quote-card .who b{font-family:var(--font-display);font-weight:600}
+  .testi-disclaimer{text-align:center;color:var(--muted);font-size:.82rem;font-style:italic;margin-top:1.8rem}
+
+  /* ---------- Countdown (inside Program banner) ---------- */
+  .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem}
+  .count-box{background:oklch(100% 0 0 / .12);border:1px solid oklch(100% 0 0 / .25);border-radius:14px;padding:.9rem .6rem;text-align:center;backdrop-filter:blur(4px)}
+  .count-box .n{font-family:var(--font-display);font-size:clamp(1.7rem,1.3rem + 1vw,2.1rem);font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+  .count-box .l{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:oklch(90% 0.04 350);margin-top:.4rem}
+  .seats b{color:#fff;font-weight:700}
+
+  /* ---------- Ebook ---------- */
+  .ebook-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,60px);align-items:center}
+  .ebook-cover{
+    max-width:380px;width:100%;justify-self:center;
+    border-radius:14px;box-shadow:var(--shadow);overflow:hidden;
+    transform:rotate(-2deg);transition:transform .4s ease;
+  }
+  .ebook-cover:hover{transform:rotate(0deg) scale(1.02)}
+  .ebook-cover img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+  .ebook-copy h2{font-size:clamp(1.9rem,1.3rem + 2vw,2.8rem)}
+  .ebook-copy p{color:var(--muted);margin-top:1.1rem;font-size:1.08rem}
+  .ebook-copy .btn{margin-top:1.8rem}
+
+  /* ---------- Lead form + FAQ (two-column) ---------- */
+  .join-faq{background:var(--accent-soft)}
+  .jf-grid{display:grid;grid-template-columns:minmax(0,0.92fr) minmax(0,1fr);gap:clamp(32px,4.5vw,72px);align-items:start}
+  .join-card{
+    background:var(--surface);border-radius:24px;box-shadow:var(--shadow);border:1px solid var(--border);
+    padding:clamp(28px,3.2vw,44px);text-align:left;position:sticky;top:88px;
+  }
+  .join-card .eyebrow{justify-self:start}
+  .join-card h2{font-size:clamp(1.8rem,1.3rem + 1.8vw,2.6rem)}
+  .join-card>p{color:var(--muted);margin-top:.8rem}
+  form{display:grid;gap:.85rem;margin-top:1.8rem;text-align:left}
+  .field input[type=text],.field input[type=email],.field input[type=tel]{
+    width:100%;padding:.85rem 1rem;border:1.5px solid var(--border);border-radius:12px;
+    font:inherit;background:var(--bg-2);color:var(--fg);transition:border-color .15s,box-shadow .15s;
+  }
+  .field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);background:#fff}
+  .checkbox{display:flex;gap:.6rem;align-items:flex-start;font-size:.86rem;color:var(--muted);margin-top:.3rem}
+  .checkbox input{margin-top:.25em;accent-color:var(--accent);width:16px;height:16px}
+  .form-msg{display:none;background:var(--accent-soft);color:var(--accent);border-radius:12px;padding:.9rem;font-weight:600;text-align:center;margin-top:.4rem}
+  .form-msg.show{display:block}
+  .form-msg--error{background:oklch(94% 0.05 25);color:oklch(48% 0.18 25)}
+  .disclaimer{font-size:.72rem;color:var(--muted);line-height:1.5;margin-top:1.1rem}
+
+  /* ---------- FAQ ---------- */
+  .faq-col .section-head{text-align:left;margin-bottom:1.4rem}
+  .faq-col .section-head .rule{margin-inline:0}
+  .faq{max-width:none;margin-inline:0}
+  .faq details:first-of-type{border-top:1px solid var(--border)}
+  .faq details{border-bottom:1px solid var(--border);padding:1.2rem 0}
+  .faq summary{
+    font-family:var(--font-display);font-size:1.18rem;font-weight:600;cursor:pointer;
+    list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .plus{flex:0 0 auto;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:1.2rem;transition:transform .2s,background .2s}
+  .faq details[open] summary .plus{transform:rotate(45deg);background:var(--accent);color:#fff}
+  .faq details p{color:var(--muted);margin-top:.9rem;padding-right:2.5rem}
+
+  /* ---------- Final CTA ---------- */
+  .final{text-align:center;position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(50% 70% at 50% 0%, oklch(92% 0.06 358 / .8), transparent 70%)}
+  .final h2{font-size:clamp(2.2rem,1.4rem + 3vw,3.8rem)}
+  .final h2 .script{display:block;font-size:1.3em;margin-top:.1em}
+  .final .actions{margin-top:2.2rem;display:flex;gap:1.4rem;align-items:center;justify-content:center;flex-wrap:wrap}
+
+  /* ---------- Footer ---------- */
+  footer{background:oklch(24% 0.04 350);color:oklch(85% 0.02 350);padding-block:2.6rem}
+  .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+  .foot-brand{
+    display:block;width:auto;height:34px;aspect-ratio:733.5/192.75;
+    background-color:oklch(94% 0.02 350);
+    -webkit-mask:url('assets/logo-kiwk.svg') no-repeat left center/contain;
+    mask:url('assets/logo-kiwk.svg') no-repeat left center/contain;
+  }
+  .foot-links{display:flex;gap:1.5rem;flex-wrap:wrap;font-size:.85rem}
+  .foot-links a{color:oklch(82% 0.02 350)}
+  .foot-links a:hover{color:#fff}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:1024px){
+    .pricing-grid{grid-template-columns:1fr 1fr;gap:22px}
+    .tier.featured{transform:none}
+    .testi-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:860px){
+    .nav-links{
+      position:absolute;top:68px;left:0;right:0;background:var(--bg);
+      flex-direction:column;align-items:flex-start;gap:0;padding:0 24px;
+      border-bottom:1px solid var(--border);max-height:0;overflow:hidden;transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:420px;padding-block:1rem}
+    .nav-links a{padding:.7rem 0;width:100%}
+    .nav-links .btn{margin:.5rem 0}
+    .nav-toggle{display:block}
+    .hero{flex-direction:column;min-height:0;padding-top:clamp(28px,6vw,48px)}
+    .hero-inner{order:1}
+    .hero-copy{max-width:none}
+    .hero-photo{order:2;position:relative;width:100%;height:clamp(380px,62vh,560px);margin-top:clamp(28px,5vw,44px)}
+    .hero-photo>img{object-position:50% 12%}
+    .hero-photo::before{background:linear-gradient(180deg, var(--bg) 0%, transparent 22%)}
+    .program-grid{grid-template-columns:1fr}
+    .program-logo{margin-inline:0}
+    .ps-copy{text-align:left;max-width:none}
+    .ps-timer{max-width:360px;margin-inline:auto}
+    .keshia-grid{grid-template-columns:1fr;gap:36px}
+    .keshia-photo{max-width:420px;margin-inline:auto}
+    .ebook-grid{grid-template-columns:1fr;gap:36px;justify-items:center;text-align:center}
+    .ebook-copy{text-align:center}
+    .shift-grid{grid-template-columns:1fr;gap:clamp(24px,5vw,36px)}
+    .shift-copy{grid-column:1;grid-row:1;max-width:none}
+    .reveal{grid-column:1;grid-row:2}
+    .jf-grid{grid-template-columns:1fr;gap:clamp(40px,7vw,56px)}
+    .join-card{position:static;top:auto;max-width:560px;margin-inline:auto;width:100%}
+  }
+  @media(max-width:600px){
+    .reveal{--pos:12%}
+    .reveal-inner{padding:26px 22px}
+    .reveal-knob{min-width:50px;padding:.7rem .55rem}
+    .reveal-knob-label{font-size:.78rem}
+    .reveal-knob svg{width:18px;height:18px}
+    .before-list li,.reveal-after .walk-item b{font-size:1rem}
+    .pricing-grid{grid-template-columns:1fr}
+    .tier.featured{order:-1}
+    .tier{padding:1.6rem 1.4rem}
+    .testi-grid{grid-template-columns:1fr}
+    .program-benefits{grid-template-columns:1fr}
+    .program .lead,.section-head p{font-size:1rem}
+    .hero-actions,.keshia-actions,.final .actions{flex-direction:column;align-items:stretch}
+    .hero-actions .btn,.final .actions .btn,.hero-actions .text-link{width:100%;text-align:center}
+    .hero-quote{top:auto;bottom:14px;left:14px;right:14px;max-width:none}
+    /* countdown: clean 2×2 grid instead of crowded wrap */
+    .countdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;max-width:300px;margin-inline:auto}
+    .count-box{min-width:0;padding:.85rem .5rem}
+    .count-box .n{font-size:2rem}
+    /* footer stacks centered */
+    .foot-inner{flex-direction:column;text-align:center}
+    .foot-links{justify-content:center}
+    .secure{text-align:center}
+  }
+  /* ---- very small phones (≤430px) ---- */
+  @media(max-width:430px){
+    section{padding-block:clamp(48px,12vw,72px)}
+    .wrap{padding-inline:18px}
+    .hero-copy h1{font-size:clamp(2.2rem,1.1rem + 6vw,2.9rem)}
+    .hero-lead{font-size:1.02rem}
+    .tier .price{font-size:2.4rem}
+    .join-card{padding:24px 20px}
+    .ebook-cover{max-width:240px}
+    .faq summary{font-size:1.05rem}
+    .nav-links a{padding:.85rem 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Kick'N It w/ Keshia — home"><span class="brand-logo" role="img" aria-label="Kick'N It w/ Keshia"></span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#program">The Program</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#keshia">About Keshia</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="#pricing" class="btn">Reserve My Spot</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-photo">
+    <img src="assets/keshia.jpg" alt="Keshia">
+    <figure class="hero-quote">
+      <span class="mark">&ldquo;</span>
+      <p>I came in exhausted and overcommitted. Five weeks later I finally learned how to say no without the guilt — and I haven't looked back.</p>
+      <figcaption class="who">— Renee, 47</figcaption>
+    </figure>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <h1>You've spent years showing up for everyone else. This is the season you <span class="you">choose you.</span></h1>
+      <p class="hero-lead">A guided reset for women 40+ ready to put themselves back on the list.</p>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn">Reserve My Spot</a>
+        <a href="#join" class="text-link">Not ready yet? Get the free Reset Starter →</a>
+      </div>
+      <div class="trust">
+        <div class="avatars"><span class="a1"></span><span class="a2"></span><span class="a3"></span><span class="a4"></span></div>
+        <span>Trusted by the women of <strong>Kick'N It w/ Keshia</strong></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUTCOMES ===== -->
+<section class="outcomes" id="outcomes">
+  <div class="wrap">
+    <div class="shift-grid">
+    <div class="reveal" id="reveal" style="--pos:10%">
+      <!-- AFTER (revealed underneath): what you'll walk away with -->
+      <div class="reveal-layer reveal-after">
+        <div class="reveal-inner">
+          <p class="reveal-tag reveal-tag--after">What you'll walk away with</p>
+          <div class="walk-list">
+            <div class="walk-item">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+              <div><b>Say no — without the guilt.</b><span>Set boundaries that protect your peace and your priorities.</span></div>
+            </div>
+            <div class="walk-item">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span>
+              <div><b>Reset what isn't working — and turn it around.</b><span>Break the cycles that keep you stuck and build what works.</span></div>
+            </div>
+            <div class="walk-item">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+              <div><b>Pour into the relationships that matter.</b><span>Strengthen the connections that support, uplift, and fill your cup.</span></div>
+            </div>
+            <div class="walk-item">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+              <div><b>Build the plan — and actually do the thing.</b><span>Clarity, structure, and accountability to follow through.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEFORE (on top, wiped away as you drag): is this you? -->
+      <div class="reveal-layer reveal-before">
+        <div class="reveal-inner">
+          <p class="reveal-tag reveal-tag--before">Is this you?</p>
+          <ul class="before-list">
+            <li>You say yes when you mean no.</li>
+            <li>You're the strong one — and you're exhausted.</li>
+            <li>You keep saying next year is your year.</li>
+            <li>You pour into everyone but yourself.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DRAG HANDLE: The shift -->
+      <button class="reveal-handle" id="revealHandle" type="button"
+              role="slider" aria-label="The shift — drag to reveal what you'll walk away with"
+              aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" tabindex="0">
+        <span class="reveal-line" aria-hidden="true"></span>
+        <span class="reveal-knob" aria-hidden="true">
+          <span class="reveal-knob-label">The shift</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7 3 12l5 5M16 7l5 5-5 5"/></svg>
+        </span>
+      </button>
+    </div>
+
+      <div class="shift-copy">
+        <p class="eyebrow">The shift</p>
+        <h2>You don't need to start over.<br>You need to <span class="script">reset.</span></h2>
+        <p class="shift-sub">Drag <em>The&nbsp;shift</em> across the panel — watch what you're carrying turn into what you'll walk away with.</p>
+        <span class="shift-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7 3 12l5 5M16 7l5 5-5 5"/></svg>
+          Drag to reveal
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROGRAM BANNER ===== -->
+<section class="program" id="program">
+  <div class="wrap">
+    <div class="program-grid">
+      <div>
+        <p class="eyebrow">The Program</p>
+        <span class="program-logo" role="img" aria-label="The Grown Woman Reset"></span>
+        <p class="program-sub">A 5-week reset you <span class="script">actually finish.</span></p>
+        <p class="lead">4 live Zoom sessions with replays, plus tools to your inbox. Keshia calls the plays — you run them.</p>
+        <p class="open">Open only once a quarter.</p>
+        <ul class="program-benefits">
+          <li>Say no — without the guilt.</li>
+          <li>Reset what isn't working — and turn it around.</li>
+          <li>Pour into the relationships that matter.</li>
+          <li>Build the plan — and actually do the thing.</li>
+        </ul>
+        <a href="#pricing" class="btn">Reserve My Spot</a>
+
+        <div class="ps-copy">
+          <p class="eyebrow" style="color:oklch(86% 0.07 350)">Limited enrollment</p>
+          <p class="ps-line">Seats are limited and go fast. When this cohort fills, the next one isn't until next quarter.</p>
+          <p class="seats"><b id="seats">12</b> seats remaining in this cohort</p>
+        </div>
+      </div>
+      <div>
+        <div class="laptop">
+          <div class="laptop-screen">
+            <span class="live">● LIVE</span>
+            <img src="assets/zoom-session.jpg" alt="Live Zoom session with Keshia" loading="lazy" decoding="async">
+          </div>
+          <div class="bar"></div>
+        </div>
+
+        <div class="ps-timer">
+          <p class="ps-timer-label">Enrollment closes in</p>
+          <div class="countdown" id="countdown" aria-label="Enrollment closes in">
+            <div class="count-box"><div class="n" id="cd-d">00</div><div class="l">Days</div></div>
+            <div class="count-box"><div class="n" id="cd-h">00</div><div class="l">Hours</div></div>
+            <div class="count-box"><div class="n" id="cd-m">00</div><div class="l">Minutes</div></div>
+            <div class="count-box"><div class="n" id="cd-s">00</div><div class="l">Seconds</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Pricing / Enroll</p>
+      <h2>Choose your reset</h2>
+      <p>One journey. Four ways to join. You choose what fits you best.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="pricing-grid">
+      <div class="tier">
+        <span class="tname">The Ebook</span>
+        <div class="price">$12</div>
+        <p class="tagline">Start today.</p>
+        <p class="sub">Your first step — read it tonight.</p>
+        <ul>
+          <li>The full reset, distilled</li>
+          <li>Read it tonight</li>
+          <li>Your first step forward</li>
+        </ul>
+        <a href="#ebook" class="btn">Get the Ebook</a>
+      </div>
+
+      <div class="tier">
+        <span class="tname">Self-Led</span>
+        <div class="price">$97</div>
+        <p class="tagline">The reset on your time.</p>
+        <p class="sub">Move at your own pace.</p>
+        <ul>
+          <li>Access to session replays</li>
+          <li>Tools for your reset by email</li>
+          <li>Starter resource library</li>
+        </ul>
+        <a href="#join" class="btn">Join Self-Led</a>
+      </div>
+
+      <div class="tier featured">
+        <span class="badge">⭐ Most Popular</span>
+        <span class="tname">The Reset</span>
+        <div class="price">$297</div>
+        <p class="tagline">The full experience.</p>
+        <p class="sub">Everything you need to finish.</p>
+        <ul>
+          <li>All 4 live Zoom sessions + replays</li>
+          <li>Full community access</li>
+          <li>Tools for your reset by email</li>
+        </ul>
+        <a href="#join" class="btn">Join The Reset</a>
+      </div>
+
+      <div class="tier">
+        <span class="tname">VIP</span>
+        <div class="price">$497</div>
+        <p class="tagline">Keshia in your corner.</p>
+        <p class="sub">The most personal path.</p>
+        <ul>
+          <li>Everything in The Reset</li>
+          <li>Private 1-on-1 time with Keshia each month</li>
+        </ul>
+        <a href="#join" class="btn">Go VIP</a>
+      </div>
+    </div>
+
+    <p class="pricing-note">Not sure? Most women start with <strong>The Reset.</strong></p>
+    <p class="secure">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Secure checkout · After you pay, you'll get a link to your member portal for all resources and live-session links · All sales final.
+    </p>
+  </div>
+</section>
+
+<!-- ===== MEET KESHIA ===== -->
+<section class="keshia" id="keshia">
+  <div class="wrap keshia-grid">
+    <div class="keshia-photo"><img src="assets/keshia.jpg" alt="Keshia" loading="lazy" decoding="async"></div>
+    <div class="keshia-copy">
+      <p class="eyebrow">Meet Keshia</p>
+      <h2>It's time to <span class="script">reset.</span></h2>
+      <p>Keshia started Kick'N It w/ Keshia during COVID — creating a space for women to experience community like they never had before. She's been public about her breast cancer, her surgeries, and her recovery, and through all of it she's walked alongside women in their season of needing other women who get it.</p>
+      <p>Now, at 55, it's time to reset. Keshia has already begun the journey — and the changes she's made in her own life have allowed her to love, live, and thrive even stronger. She wants to walk alongside you again. But this time, it's for results — not just a space to vent.</p>
+      <p class="pull">Real, been-there, faith-rooted — she talks to you like a sister, not a guru.</p>
+      <p class="keshia-meta">She's been where you are. Now she's showing the way.</p>
+      <div class="keshia-actions">
+        <a href="#pricing" class="btn">Reserve My Spot</a>
+        <a href="#pricing" class="text-link">See the tiers →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="social" id="results">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Real women. Real results.</p>
+      <h2>Their lives <span class="script">changed.</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="testi-grid">
+      <figure class="quote-card">
+        <span class="mark">&ldquo;</span>
+        <p>Keshia doesn't sugarcoat it — she tells you the truth like a sister who actually wants better for you. This reset changed how I show up for myself.</p>
+        <figcaption class="who"><span class="av a3"></span><span><b>Tasha</b>, 52</span></figcaption>
+      </figure>
+      <figure class="quote-card">
+        <span class="mark">&ldquo;</span>
+        <p>I've done programs before that felt like a therapy group going nowhere. This one made me do the thing. I finally have a plan and I'm sticking to it.</p>
+        <figcaption class="who"><span class="av a1"></span><span><b>Dee</b>, 44</span></figcaption>
+      </figure>
+      <figure class="quote-card">
+        <span class="mark">&ldquo;</span>
+        <p>The replays were everything. I caught every session on my own time and still felt like I was right there in the room.</p>
+        <figcaption class="who"><span class="av a2"></span><span><b>Monica</b>, 49</span></figcaption>
+      </figure>
+    </div>
+    <p class="testi-disclaimer">Real client quotes — pulled from Kick'N It members and past program participants.</p>
+  </div>
+</section>
+
+<!-- ===== SCARCITY ===== -->
+<!-- ===== EBOOK ===== -->
+<section class="ebook" id="ebook">
+  <div class="wrap ebook-grid">
+    <div class="ebook-cover">
+      <img src="assets/ebook-cover.png" alt="The Grown Woman Reset ebook cover" loading="lazy">
+    </div>
+    <div class="ebook-copy">
+      <p class="eyebrow">The Ebook</p>
+      <h2>Start your reset tonight — for $12.</h2>
+      <p>A taste of the full experience, in your hands today. The first step costs less than lunch — and it's the one that changes everything.</p>
+      <a href="#join" class="btn">Get the Ebook — $12</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JOIN THE LIST + FAQ ===== -->
+<section class="join-faq" id="join">
+  <div class="wrap">
+    <div class="jf-grid">
+
+      <!-- Left: lead capture -->
+      <div class="join-card">
+        <p class="eyebrow">Join the list — free</p>
+        <h2>Get the free Reset Starter.</h2>
+        <p>The first step to choosing yourself — sent straight to your inbox.</p>
+        <form id="leadForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <div class="field"><input type="text" name="first" placeholder="First name" required></div>
+          <div class="field"><input type="email" name="email" placeholder="Email address" required></div>
+          <div class="field"><input type="tel" name="phone" placeholder="Phone number"></div>
+          <label class="checkbox"><input type="checkbox" name="sms" value="yes"> Yes, text me reset tips and updates.</label>
+          <input type="hidden" name="_subject" value="New Reset Starter signup">
+          <button type="submit" class="btn block">Send Me the Reset Starter</button>
+          <div class="form-msg" id="formMsg">✓ You're in! Check your inbox for the Reset Starter.</div>
+          <div class="form-msg form-msg--error" id="formErr">Something went wrong — please try again, or email us directly.</div>
+        </form>
+        <p class="disclaimer">By entering your phone number you agree to receive recurring marketing &amp; program texts from Kick'N It w/ Keshia. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of purchase.</p>
+      </div>
+
+      <!-- Right: FAQ -->
+      <div class="faq-col" id="faq">
+        <div class="section-head">
+          <p class="eyebrow">Questions</p>
+          <h2>Frequently asked</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="faq">
+          <details open>
+        <summary>How long is the program? <span class="plus">+</span></summary>
+        <p>The Grown Woman Reset runs 5 weeks. Weeks 1–4 are your live coaching sessions; Week 5 is execution week — where you take everything you've learned and put it into action. We only open it once a quarter.</p>
+      </details>
+      <details>
+        <summary>What if I can't make a session live? <span class="plus">+</span></summary>
+        <p>Every session is recorded. You'll get the replays, so you never miss a thing.</p>
+      </details>
+      <details>
+        <summary>What do I get when I join? <span class="plus">+</span></summary>
+        <p>After you pay, you'll receive a link to your member portal — that's where you'll access your resources and the links to join the live sessions.</p>
+      </details>
+      <details>
+        <summary>What's the difference between the tiers? <span class="plus">+</span></summary>
+        <p>Your tier determines what you have access to — from self-led with replays, all the way up to weekly live coaching and private 1-on-1 time with Keshia.</p>
+      </details>
+      <details>
+        <summary>Is this for me? <span class="plus">+</span></summary>
+        <p>If you're a woman 40+ who's tired of putting yourself last and ready to choose you — yes. This is your season.</p>
+      </details>
+      <details>
+        <summary>Do you offer refunds? <span class="plus">+</span></summary>
+        <p>All sales are final. Because seats are limited and access is granted right away, we don't offer refunds. Come ready to show up for yourself.</p>
+      </details>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final">
+  <div class="wrap">
+    <h2>This is your season. <span class="script">Don't let it pass.</span></h2>
+    <div class="actions">
+      <a href="#pricing" class="btn">Reserve My Spot</a>
+      <a href="#join" class="text-link">Not ready? Get the free Reset Starter →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contact">
+  <div class="wrap foot-inner">
+    <span class="foot-brand" role="img" aria-label="Kick'N It w/ Keshia"></span>
+    <nav class="foot-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">SMS Consent</a>
+      <a href="mailto:kiwkcustomer@gmail.com">Contact: kiwkcustomer@gmail.com</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  const toggle=document.getElementById('navToggle');
+  const links=document.getElementById('navLinks');
+  toggle.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+  // Lead form — submits to Formspree via fetch (no page reload)
+  const form=document.getElementById('leadForm');
+  const formMsg=document.getElementById('formMsg');
+  const formErr=document.getElementById('formErr');
+  const submitBtn=form.querySelector('button[type=submit]');
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const first=form.first.value.trim(), email=form.email.value.trim();
+    const emailOk=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+    if(!first){ form.first.focus(); return; }
+    if(!emailOk){ form.email.focus(); return; }
+    formErr.classList.remove('show');
+    submitBtn.disabled=true;
+    submitBtn.textContent='Sending…';
+    try{
+      const res=await fetch(form.action,{
+        method:'POST',
+        body:new FormData(form),
+        headers:{Accept:'application/json'}
+      });
+      if(!res.ok) throw new Error('Form submission failed');
+      formMsg.classList.add('show');
+      submitBtn.textContent='Sent ✓';
+      form.querySelectorAll('input').forEach(i=>i.disabled=true);
+    }catch(err){
+      submitBtn.disabled=false;
+      submitBtn.textContent='Send Me the Reset Starter';
+      formErr.classList.add('show');
+    }
+  });
+
+  // Countdown — next quarter close, persisted target
+  (function(){
+    const KEY='gwr_deadline';
+    let target=Number(localStorage.getItem(KEY));
+    const now=Date.now();
+    if(!target||target<now){ target=now+ (9*86400000) + (4*3600000); localStorage.setItem(KEY,target); }
+    const d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
+          m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
+    function pad(n){return String(n).padStart(2,'0')}
+    function tick(){
+      let diff=Math.max(0,target-Date.now());
+      const dd=Math.floor(diff/86400000);diff-=dd*86400000;
+      const hh=Math.floor(diff/3600000);diff-=hh*3600000;
+      const mm=Math.floor(diff/60000);diff-=mm*60000;
+      const ss=Math.floor(diff/1000);
+      d.textContent=pad(dd);h.textContent=pad(hh);m.textContent=pad(mm);s.textContent=pad(ss);
+    }
+    tick();setInterval(tick,1000);
+  })();
+
+  // Before/After reveal — "The shift" slider
+  (function(){
+    const reveal=document.getElementById('reveal');
+    const handle=document.getElementById('revealHandle');
+    if(!reveal||!handle) return;
+    const MIN=6, MAX=94, REST=10;
+    let pos=REST, dragging=false, autoPlayed=false;
+
+    function set(p,touch){
+      pos=Math.min(MAX,Math.max(MIN,p));
+      reveal.style.setProperty('--pos',pos+'%');
+      handle.setAttribute('aria-valuenow',Math.round(pos));
+      if(touch) reveal.classList.add('touched');
+    }
+    function fromClientX(x){
+      const r=reveal.getBoundingClientRect();
+      if(!r.width) return;
+      set(((x-r.left)/r.width)*100,true);
+    }
+
+    // --- drag (mouse + touch) ---
+    function start(e){
+      dragging=true;
+      reveal.classList.add('touched','dragging');           // kill transition for 1:1 drag
+      try{ handle.setPointerCapture(e.pointerId); }catch(_){}
+      fromClientX(e.clientX); e.preventDefault();
+    }
+    function move(e){ if(dragging){ fromClientX(e.clientX); e.preventDefault(); } }
+    function end(){ if(dragging){ dragging=false; reveal.classList.remove('dragging'); } }
+
+    handle.addEventListener('pointerdown',start);
+    handle.addEventListener('pointermove',move);             // pointer capture routes moves here
+    window.addEventListener('pointermove',move);             // belt-and-suspenders
+    window.addEventListener('pointerup',end);
+    window.addEventListener('pointercancel',end);
+
+    // tap anywhere on the panel to jump the shift there
+    reveal.addEventListener('pointerdown',e=>{
+      if(e.target.closest('.reveal-handle')) return;
+      reveal.classList.add('touched');
+      fromClientX(e.clientX);
+    });
+
+    // --- keyboard ---
+    handle.addEventListener('keydown',e=>{
+      const step=e.shiftKey?12:5;
+      if(e.key==='ArrowLeft'||e.key==='ArrowDown'){ set(pos-step,true); e.preventDefault(); }
+      else if(e.key==='ArrowRight'||e.key==='ArrowUp'){ set(pos+step,true); e.preventDefault(); }
+      else if(e.key==='Home'){ set(MIN,true); e.preventDefault(); }
+      else if(e.key==='End'){ set(MAX,true); e.preventDefault(); }
+    });
+
+    // --- one-time auto-sweep when it scrolls into view (demonstrates the interaction) ---
+    function autoPlay(){
+      if(autoPlayed) return; autoPlayed=true;
+      const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      if(reduce){ set(50,false); return; }                  // just show both halves, no motion
+      set(88,false);                                        // sweep open → reveal the gains
+      setTimeout(()=>set(REST,false),1500);                 // settle back, leaving the cue
+    }
+    if('IntersectionObserver' in window){
+      const io=new IntersectionObserver((ents)=>{
+        ents.forEach(en=>{ if(en.isIntersecting){ autoPlay(); io.disconnect(); } });
+      },{threshold:.45});
+      io.observe(reveal);
+    }else{ autoPlay(); }
+
+    set(REST,false);
+  })();
+</script>
+</body>
+</html>
