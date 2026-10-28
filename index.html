@@ -586,7 +586,6 @@
     </button>
     <nav class="nav-links" id="navLinks">
       <a href="#program">The Program</a>
-      <a href="#pricing">Pricing</a>
       <a href="#keshia">About Keshia</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
@@ -901,7 +900,6 @@
       <p class="keshia-meta">— Keshia</p>
       <div class="keshia-actions">
         <button class="btn" onclick="openWaitlist()">Join the Waitlist</button>
-        <a href="#pricing" class="text-link">See the tiers →</a>
       </div>
     </div>
   </div>
@@ -963,13 +961,9 @@
         <p class="eyebrow">Join the list — free</p>
         <h2>Get the free Reset Starter.</h2>
         <p>The first step to choosing yourself — sent straight to your inbox.</p>
-        <form id="leadForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
-          <!-- Web3Forms: replace YOUR_WEB3FORMS_ACCESS_KEY with the key emailed to kiwkcustomer@gmail.com -->
-          <input type="hidden" name="access_key" value="7d832373-42fd-416a-8f19-cf64c5cc8cd8">
-          <input type="hidden" name="subject" value="New Reset Starter signup — Kickin' It w/ Keshia">
-          <input type="hidden" name="from_name" value="Kickin' It w/ Keshia — Website">
-          <!-- Honeypot spam trap (must stay hidden) -->
-          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <form id="leadForm" novalidate>
+          <input type="hidden" name="_subject" value="New Reset Starter signup — Kickin' It w/ Keshia">
+          <input type="hidden" name="_captcha" value="false">
           <div class="field"><input type="text" name="first" placeholder="First name" required></div>
           <div class="field"><input type="email" name="email" placeholder="Email address" required></div>
           <div class="field"><input type="tel" name="phone" placeholder="Phone number"></div>
@@ -1120,7 +1114,7 @@
   toggle.addEventListener('click',()=>links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
 
-  // Lead form — capture to Web3Forms (emails kiwkcustomer@gmail.com), then reveal the guide.
+  // Lead form — capture via FormSubmit.co (emails keshia@ilistluxuryga.com), then reveal the guide.
   const GUIDE_URL='https://assets.cdn.filesafe.space/ZayJPIz4bn4Ne2HoaYe6/media/6a43417e06fe2e51dce5e406.pdf';
   const form=document.getElementById('leadForm');
   const formMsg=document.getElementById('formMsg');
@@ -1137,10 +1131,17 @@
     submitBtn.textContent='Sending…';
     // Best-effort lead capture — never block the guide on a network/key error.
     try{
-      await fetch('https://api.web3forms.com/submit',{
+      await fetch('https://formsubmit.co/ajax/keshia@ilistluxuryga.com',{
         method:'POST',
-        body:new FormData(form),
-        headers:{Accept:'application/json'}
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({
+          first_name:first,
+          email:email,
+          phone:form.phone?form.phone.value.trim():'',
+          sms_opt_in:form.sms&&form.sms.checked?'yes':'no',
+          _subject:'New Reset Starter signup — Kickin\' It w/ Keshia',
+          _captcha:'false'
+        })
       });
     }catch(_){ /* deliver the guide regardless */ }
     formMsg.classList.add('show');
@@ -1166,7 +1167,7 @@
       d.textContent=pad(dd);h.textContent=pad(hh);m.textContent=pad(mm);s.textContent=pad(ss);
       if(diff<=0) clearInterval(timer);
     }
-    tick();const timer=setInterval(tick,1000);
+    const timer=setInterval(tick,1000); tick();
   })();
 
   // Before/After reveal — "The shift" slider
